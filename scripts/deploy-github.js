@@ -8,6 +8,6 @@ ghpages.publish(
         repo: "https://github.com/hankhsu1996/hankhsu1996.github.io.git"
     },
     () => {
-        console.log("Deploy Complete!");
+        console.log("Deployment complete!");
     }
 );
