@@ -6,7 +6,7 @@ ghpages.publish(
     "public",
     {
         branch: "master",
-        repo: "git@github.com:hankhsu1996/hankhsu1996.github.io.git",
+        repo: `https://hankhsu1996:${process.env.GH_TOKEN}@github.com/hankhsu1996/hankhsu1996.github.io.git`,
         user: {
             name: "hankhsu1996",
             email: "hank850503@gmail.com"
