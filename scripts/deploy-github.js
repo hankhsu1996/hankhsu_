@@ -6,7 +6,11 @@ ghpages.publish(
     "public",
     {
         branch: "master",
-        repo: "https://github.com/hankhsu1996/hankhsu1996.github.io.git"
+        repo: "https://github.com/hankhsu1996/hankhsu1996.github.io.git",
+        user: {
+            name: "hankhsu1996",
+            email: "hank850503@gmail.com"
+        }
     },
     err => {
         if (err) {
