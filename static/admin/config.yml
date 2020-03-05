@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: hankhsu1996/hankhsu1996.github.io
+  repo: hankhsu1996/hanksharbor
 
 media_folder: static/assets
 public_folder: assets
