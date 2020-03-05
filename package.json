@@ -55,9 +55,9 @@
         "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
     },
     "scripts": {
-        "build": "gatsby build",
+        "build": "gatsby clean; gatsby build",
         "develop": "gatsby develop",
-        "deploy": "npm run build && node ./scripts/deploy-github",
+        "deploy": "npm run build && gh-pages-clean && node ./scripts/deploy-github",
         "format": "prettier --write src/**/*.{js,jsx}",
         "start": "npm run develop",
         "serve": "gatsby serve",
