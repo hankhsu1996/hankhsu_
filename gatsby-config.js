@@ -80,20 +80,31 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `Gatsby Starter Blog`,
-                short_name: `GatsbyJS`,
+                name: `hankhsu1996 - Hank Hsu's Website`,
+                short_name: `hankhsu1996`,
                 start_url: `/`,
                 background_color: `#ffffff`,
                 theme_color: `#663399`,
                 display: `minimal-ui`,
                 // edit below
-                icon: `content/assets/gatsby-icon.png`
+                icon: `content/assets/favicon.png`
             }
         },
         {
             resolve: `gatsby-plugin-typography`,
             options: {
                 pathToConfigModule: `src/utils/typography`
+            }
+        },
+        {
+            resolve: `gatsby-plugin-prefetch-google-fonts`,
+            options: {
+                fonts: [
+                    {
+                        family: `Open Sans`,
+                        variants: [`400`, `600`, `700`, `800`]
+                    }
+                ]
             }
         }
     ]

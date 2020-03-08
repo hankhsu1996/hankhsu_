@@ -1,19 +1,26 @@
 import React from "react";
+import { Link as ScrollLink } from "react-scroll";
 
 class IndexHeader extends React.Component {
     render() {
         return (
             <div className="header">
+                <img id="mountain" src="mountain.svg" alt="Mountain" />
                 <div className="header__container">
-                    <div className="header__logo">This is a logo</div>
                     <div className="header__title">
                         <h1 className="header__h1">hankhsu1996</h1>
-                        <p className="header__p">Hank Hsu's Website</p>
+                        <p className="header__p"> – Hank Hsu's Website – </p>
                     </div>
                 </div>
-                <a className="header__arrow" href="#main">
-                    #click to main
-                </a>
+                <ScrollLink
+                    className="header__arrow"
+                    to="about"
+                    smooth={true}
+                    duration={750}
+                    offset={1}
+                >
+                    <span></span>
+                </ScrollLink>
             </div>
         );
     }

@@ -38,7 +38,7 @@ class IndexPage extends React.Component {
   handleSetInactive(targetName) {
     // Wait for a time to check if current position is out of range
     setTimeout(() => {
-      if (targetName == "about" && this.state.active == "about") {
+      if (targetName === "about" && this.state.active === "about") {
         this.setState({ showNav: false });
       }
     }, 10);
@@ -54,14 +54,14 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <nav className={this.state.showNav ? "show" : "hide"}>
-          <li className={this.state.active == "about" ? "activeLock" : null}>
+          <li className={this.state.active === "about" ? "activeLock" : null}>
             <ScrollLink
-              className={this.state.active == "about" ? "activeLock" : null}
+              className={this.state.active === "about" ? "activeLock" : null}
               activeClass="active"
               to="about"
               spy={true}
               smooth={true}
-              offset={0}
+              offset={1} // Avoid to see header image
               duration={500}
               onSetActive={this.handleSetActive}
               onSetInactive={this.handleSetInactive}
@@ -70,11 +70,13 @@ class IndexPage extends React.Component {
             </ScrollLink>
           </li>
           <li
-            className={this.state.active == "experiences" ? "activeLock" : null}
+            className={
+              this.state.active === "experiences" ? "activeLock" : null
+            }
           >
             <ScrollLink
               className={
-                this.state.active == "experiences" ? "activeLock" : null
+                this.state.active === "experiences" ? "activeLock" : null
               }
               activeClass="active"
               to="experiences"
@@ -88,9 +90,11 @@ class IndexPage extends React.Component {
               Experiences
             </ScrollLink>
           </li>
-          <li className={this.state.active == "projects" ? "activeLock" : null}>
+          <li
+            className={this.state.active === "projects" ? "activeLock" : null}
+          >
             <ScrollLink
-              className={this.state.active == "projects" ? "activeLock" : null}
+              className={this.state.active === "projects" ? "activeLock" : null}
               activeClass="active"
               to="projects"
               spy={true}
@@ -103,9 +107,9 @@ class IndexPage extends React.Component {
               Projects
             </ScrollLink>
           </li>
-          <li className={this.state.active == "posts" ? "activeLock" : null}>
+          <li className={this.state.active === "posts" ? "activeLock" : null}>
             <ScrollLink
-              className={this.state.active == "posts" ? "activeLock" : null}
+              className={this.state.active === "posts" ? "activeLock" : null}
               activeClass="active"
               to="posts"
               spy={true}
@@ -134,21 +138,6 @@ class IndexPage extends React.Component {
             <Button marginTop="35px">Go to Blog</Button>
           </Link>
         </Element>
-        <h1>
-          Hey people{" "}
-          <span role="img" aria-label="wave emoji">
-            👋
-          </span>
-        </h1>
-        <p>Welcome to your new Gatsby website. You are on your home page.</p>
-        <p>
-          This starter comes out of the box with styled components and Gatsby's
-          default starter blog running on Netlify CMS.
-        </p>
-        <p>Now go build something great!</p>
-        <Link to="/blog/">
-          <Button marginTop="35px">Go to Blog</Button>
-        </Link>
       </Layout>
     );
   }
