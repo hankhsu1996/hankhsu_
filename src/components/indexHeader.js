@@ -5,7 +5,12 @@ class IndexHeader extends React.Component {
     render() {
         return (
             <div className="header">
-                <img id="mountain" src="mountain.svg" alt="Mountain" />
+                <img
+                    id="mountain"
+                    src="mountain.svg"
+                    alt="Mountain"
+                    draggable="false"
+                />
                 <div className="header__container">
                     <div className="header__title">
                         <h1 className="header__h1">hankhsu1996</h1>
