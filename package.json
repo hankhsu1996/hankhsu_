@@ -8,11 +8,12 @@
         "url": "https://github.com/gatsbyjs/gatsby/issues"
     },
     "dependencies": {
+        "@fullpage/react-fullpage": "^0.1.17",
         "@mdx-js/mdx": "^1.5.1",
         "@mdx-js/react": "^1.5.1",
         "babel-plugin-styled-components": "^1.10.0",
         "gatsby": "^2.3.25",
-        "gatsby-image": "^2.0.39",
+        "gatsby-image": "^2.2.43",
         "gatsby-plugin-feed-mdx": "^1.0.0",
         "gatsby-plugin-google-analytics": "^2.0.18",
         "gatsby-plugin-manifest": "^2.0.29",
@@ -35,6 +36,7 @@
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "react-helmet": "^5.2.0",
+        "react-scroll": "^1.7.16",
         "react-switch": "^5.0.0",
         "react-typography": "^0.16.19",
         "styled-components": "^4.2.0",
@@ -57,7 +59,7 @@
     "scripts": {
         "build": "gatsby clean; gatsby build",
         "develop": "gatsby develop",
-        "deploy": "npm run build && gh-pages-clean && node ./scripts/deploy-github",
+        "deploy": "npm run build",
         "format": "prettier --write src/**/*.{js,jsx}",
         "start": "npm run develop",
         "serve": "gatsby serve",

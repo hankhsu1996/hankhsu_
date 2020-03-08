@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
     pathPrefix: "/public",
     siteMetadata: {
@@ -21,15 +23,22 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/content/blog`,
+                path: path.join(__dirname, `content`, `blog`),
                 name: `blog`
             }
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/content/assets`,
+                path: path.join(__dirname, `content`, `assets`),
                 name: `assets`
+            }
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: path.join(__dirname, `src`, `images`),
+                name: `images`
             }
         },
         {

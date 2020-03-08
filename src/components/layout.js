@@ -3,6 +3,9 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 
 import { rhythm, scale } from "../utils/typography";
+import IndexHeader from "./indexHeader";
+
+// Wrap header, main, and footer
 
 class Layout extends React.Component {
     render() {
@@ -11,7 +14,9 @@ class Layout extends React.Component {
         const blogPath = `${__PATH_PREFIX__}/blog/`;
         let header;
 
-        if (location.pathname === rootPath || location.pathname === blogPath) {
+        if (location.pathname === rootPath) {
+            header = <IndexHeader />;
+        } else if (location.pathname === blogPath) {
             header = (
                 <h1
                     style={{
@@ -55,17 +60,8 @@ class Layout extends React.Component {
         }
         return (
             <Wrapper>
-                <div
-                    style={{
-                        marginLeft: `auto`,
-                        marginRight: `auto`,
-                        maxWidth: rhythm(24),
-                        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`
-                    }}
-                >
-                    <header>{header}</header>
-                    <main>{children}</main>
-                </div>
+                <header>{header}</header>
+                <main id="main">{children}</main>
                 <Footer>
                     © {new Date().getFullYear()}, Built with
                     {` `}
@@ -77,6 +73,8 @@ class Layout extends React.Component {
 }
 
 const Wrapper = styled.div`
+    width: 100%;
+    background-color: "#123456";
     min-height: 100vh;
 `;
 
