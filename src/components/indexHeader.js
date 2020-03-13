@@ -13,8 +13,10 @@ class IndexHeader extends React.Component {
                 />
                 <div className="header__container">
                     <div className="header__title">
-                        <h1 className="header__h1">hankhsu1996</h1>
-                        <p className="header__p"> – Hank Hsu's Website – </p>
+                        <h1 className="header__h1">Hank Hsu's Website</h1>
+                        <p className="header__p">
+                            {/*Hardware Engineering Student*/}
+                        </p>
                     </div>
                 </div>
                 <ScrollLink

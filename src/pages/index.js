@@ -5,6 +5,7 @@ import { Link as ScrollLink, Element, scrollSpy } from "react-scroll";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Button from "../components/button";
+import ProjectDiv from "../components/index_project_div";
 
 class IndexPage extends React.Component {
     constructor(props) {
@@ -45,7 +46,8 @@ class IndexPage extends React.Component {
     }
 
     render() {
-        const siteTitle = "hankhsu1996";
+        const siteTitle = "Hank Hsu's Website";
+        const hideOrShow = this.state.showNav ? "show" : "hide";
 
         return (
             <Layout location={this.props.location} title={siteTitle}>
@@ -53,7 +55,7 @@ class IndexPage extends React.Component {
                     title="Home"
                     keywords={[`blog`, `gatsby`, `javascript`, `react`]}
                 />
-                <nav className={this.state.showNav ? "show" : "hide"}>
+                <nav className={[hideOrShow, "mobileHidden"].join(" ")}>
                     <li
                         className={
                             this.state.active === "about" ? "activeLock" : null
@@ -151,26 +153,21 @@ class IndexPage extends React.Component {
                 <Element name="about" className="section">
                     <h1>About Me</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.
+                        Hello, I'm Hank Hsu from Taichung, Taiwan. I graduated
+                        from National Taiwan University with a double major in
+                        mechanical engineering and electrical engineering. My
+                        research interests lie in <b>bio-inspired robots</b>,{" "}
+                        <b>mmWave IC</b>, and <b>digital IC / VLSI</b>. During
+                        my undergraduate years, I participated in several
+                        research projects, including the gait development of a
+                        Hexapod robot, a Ka-band down-conversion mixer IC, and
+                        an advanced encryption standard IC.
                     </p>
+                    <ProjectDiv />
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.
+                        I decided to pursue a master's degree in electrical and
+                        computer engineering in the U.S. Currently, I'm waiting
+                        for the admission decision.
                     </p>
                 </Element>
                 <Element name="experiences" className="section">

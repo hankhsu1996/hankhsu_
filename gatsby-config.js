@@ -4,10 +4,10 @@ module.exports = {
     pathPrefix: "/public",
     siteMetadata: {
         // edit below
-        title: `Hank's Harbor`,
+        title: `Hank Hsu's Website`,
         author: `Hank Hsu`,
-        description: `Hank Hsu's Github Pages`,
-        siteUrl: `https://hankhsu1996.github.io/`,
+        description: `Hank Hsu's Website`,
+        siteUrl: `https://hankhsu1996.netlify.io/`,
         social: {
             twitter: `hankhsu1996`
         }
@@ -70,13 +70,13 @@ module.exports = {
                 ]
             }
         },
-        {
-            resolve: `gatsby-plugin-google-analytics`,
-            options: {
-                // edit below
-                // trackingId: `ADD YOUR TRACKING ID HERE`,
-            }
-        },
+        // {
+        //     resolve: `gatsby-plugin-google-analytics`,
+        //     options: {
+        //         // edit below
+        //         // trackingId: `ADD YOUR TRACKING ID HERE`,
+        //     }
+        // },
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
@@ -85,7 +85,7 @@ module.exports = {
                 start_url: `/`,
                 background_color: `#ffffff`,
                 theme_color: `#663399`,
-                display: `minimal-ui`,
+                display: `standalone`, // default: `minimal-ui`
                 // edit below
                 icon: `content/assets/favicon.png`
             }
