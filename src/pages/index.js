@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Link as ScrollLink, Element, scrollSpy } from "react-scroll";
+import { Link as ScrollLink, Element } from "react-scroll";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -8,57 +8,8 @@ import Button from "../components/button";
 import Logo from "../components/logo";
 
 class IndexPage extends React.Component {
-    // We use constructor to save state variable
-    constructor(props) {
-        super(props);
-
-        // Bind the this context to the handler function, so 'this' context would be IndexPage itself rather than ScrollLink
-        this.handleSetActive = this.handleSetActive.bind(this);
-        this.handleSetInactive = this.handleSetInactive.bind(this);
-
-        // Set some state
-        this.state = {
-            active: "about",
-            showNav: false
-        };
-    }
-
-    // Section active spy
-    onLayoutEffect() {
-        scrollSpy.update();
-    }
-
-    // Because react-scroll can only set active class to link itself, we have to write another function to set active class to the link's wrapper
-    handleSetActive(targetName) {
-        this.setState({
-            active: targetName,
-            showNav: true
-        });
-    }
-
-    // Handle the scroller out of range
-    handleSetInactive(targetName) {
-        // Wait for a time to check if current position is out of range
-        const hideNavDelay = 10;
-        setTimeout(() => {
-            // If we are leaving "about" section and after some time the active section is still "about"
-            if (targetName === "about" && this.state.active === "about") {
-                this.setState({ showNav: false });
-            }
-        }, hideNavDelay);
-    }
-
     render() {
-        // Pass to Layout component
         const siteTitle = "Hank Hsu's Website";
-
-        // Navbar settings
-        const showNav = this.state.showNav ? "show" : "hide";
-        // const navClassName = [showNav, "mobileHidden"].join(" ");
-        // const aboutActive = this.state.active === "about" ? "myactive" : null;
-        // const expActive = this.state.active === "exp" ? "myactive" : null;
-        // const projActive = this.state.active === "proj" ? "myactive" : null;
-        // const postsActive = this.state.active === "posts" ? "myactive" : null;
 
         return (
             <Layout location={this.props.location} title={siteTitle}>
@@ -66,60 +17,6 @@ class IndexPage extends React.Component {
                     title="Home"
                     keywords={[`Hank`, `Hank`, `Personal`, `Website`]}
                 />
-                {/*<nav className={navClassName}>
-                    <li className={aboutActive}>
-                        <ScrollLink
-                            activeClass="active"
-                            to="about"
-                            spy={true}
-                            smooth={true}
-                            duration={500}
-                            onSetActive={this.handleSetActive}
-                            onSetInactive={this.handleSetInactive}
-                        >
-                            About Me
-                        </ScrollLink>
-                    </li>
-                    <li className={expActive}>
-                        <ScrollLink
-                            activeClass="active"
-                            to="exp"
-                            spy={true}
-                            smooth={true}
-                            duration={500}
-                            onSetActive={this.handleSetActive}
-                            onSetInactive={this.handleSetInactive}
-                        >
-                            Experiences
-                        </ScrollLink>
-                    </li>
-                    <li className={projActive}>
-                        <ScrollLink
-                            activeClass="active"
-                            to="proj"
-                            spy={true}
-                            smooth={true}
-                            duration={500}
-                            onSetActive={this.handleSetActive}
-                            onSetInactive={this.handleSetInactive}
-                        >
-                            Projects
-                        </ScrollLink>
-                    </li>
-                    <li className={postsActive}>
-                        <ScrollLink
-                            activeClass="active"
-                            to="posts"
-                            spy={true}
-                            smooth={true}
-                            duration={500}
-                            onSetActive={this.handleSetActive}
-                            onSetInactive={this.handleSetInactive}
-                        >
-                            Posts
-                        </ScrollLink>
-                    </li>
-                </nav>*/}
                 <Element name="header" className="header">
                     <div className="header__container">
                         <div className="header__logo">
@@ -133,7 +30,6 @@ class IndexPage extends React.Component {
                     <ScrollLink
                         activeClass="active"
                         to="about"
-                        spy={true}
                         smooth={true}
                         duration={1000}
                         className="header__arrow"

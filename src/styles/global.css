@@ -54,12 +54,14 @@ a {
     -o-flex-direction: column;
     flex-direction: column;
 
-    /* Real 100% height */
     min-height: 100vh;
+    /* Real 100% height */
     /*min-height: calc(var(--vh, 1vh) * 100);*/
 }
 
 .header__container {
+    visibility: hidden;
+    opacity: 0;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -68,13 +70,21 @@ a {
     -ms-align-items: center;
     align-items: center;
     margin-bottom: 30px;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
 }
 #header__logo {
     padding: 0;
     margin: 0;
-    margin-right: 18px;
-    width: 120px;
-    height: 120px;
+    margin-right: 25px;
+    width: 150px;
+    height: 150px;
 }
 
 #header__logo #H polyline,
@@ -89,10 +99,14 @@ a {
 .header__h1,
 .header__h1 span {
     font-family: "Open Sans condensed";
-    font-size: 50px;
-    letter-spacing: 15px;
+    font-size: 65px;
+    letter-spacing: 20px;
     font-weight: 300;
-    line-height: 50px;
+    line-height: 62px;
+}
+
+.header__h1.line2 {
+    letter-spacing: 20.6px;
 }
 
 /* Header animation */
@@ -105,7 +119,7 @@ a {
 .header #A {
     stroke-dasharray: 330 1000;
     stroke-dashoffset: 331;
-    animation: dash 6s ease-out forwards;
+    animation: dash 5s ease-out forwards;
 }
 
 .header #N {
@@ -117,8 +131,14 @@ a {
 .header #K {
     stroke-dasharray: 460 1000;
     stroke-dashoffset: 461;
-    animation: dash 6s ease-out forwards;
+    animation: dash 7s ease-out forwards;
 }
+
+/*.header #frame {
+    stroke-dasharray: 1450 2000;
+    stroke-dashoffset: 1451;
+    animation: dash 5s ease-out forwards;
+}*/
 
 @keyframes dash {
     to {
@@ -130,7 +150,7 @@ a {
     visibility: hidden;
     opacity: 0;
     -webkit-animation: 1s infinite alternate arrowBounce;
-    animation: 1s infinite alternate arrowBounce, 0.7s fadein 7s forwards;
+    animation: 1s infinite alternate arrowBounce, 0.7s fadeInDelay 7s forwards;
     position: absolute;
     bottom: 10%;
 }
@@ -150,11 +170,7 @@ a {
     transform: rotate(45deg);
 }
 
-@keyframes fadein {
-    from {
-        visibility: hidden;
-        opacity: 0;
-    }
+@keyframes fadeInDelay {
     to {
         visibility: visible;
         opacity: 1;
