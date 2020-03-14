@@ -5,13 +5,14 @@ import { Link as ScrollLink, Element, scrollSpy } from "react-scroll";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Button from "../components/button";
-import ProjectDiv from "../components/index_project_div";
+import Logo from "../components/logo";
 
 class IndexPage extends React.Component {
+    // We use constructor to save state variable
     constructor(props) {
         super(props);
 
-        // Bind the this context to the handler function
+        // Bind the this context to the handler function, so 'this' context would be IndexPage itself rather than ScrollLink
         this.handleSetActive = this.handleSetActive.bind(this);
         this.handleSetInactive = this.handleSetInactive.bind(this);
 
@@ -38,40 +39,40 @@ class IndexPage extends React.Component {
     // Handle the scroller out of range
     handleSetInactive(targetName) {
         // Wait for a time to check if current position is out of range
+        const hideNavDelay = 10;
         setTimeout(() => {
+            // If we are leaving "about" section and after some time the active section is still "about"
             if (targetName === "about" && this.state.active === "about") {
                 this.setState({ showNav: false });
             }
-        }, 10);
+        }, hideNavDelay);
     }
 
     render() {
+        // Pass to Layout component
         const siteTitle = "Hank Hsu's Website";
-        const hideOrShow = this.state.showNav ? "show" : "hide";
+
+        // Navbar settings
+        const showNav = this.state.showNav ? "show" : "hide";
+        const navClassName = [showNav, "mobileHidden"].join(" ");
+        const aboutActive = this.state.active === "about" ? "myactive" : null;
+        const expActive = this.state.active === "exp" ? "myactive" : null;
+        const projActive = this.state.active === "proj" ? "myactive" : null;
+        const postsActive = this.state.active === "posts" ? "myactive" : null;
 
         return (
             <Layout location={this.props.location} title={siteTitle}>
                 <SEO
                     title="Home"
-                    keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+                    keywords={[`Hank`, `Hank`, `Personal`, `Website`]}
                 />
-                <nav className={[hideOrShow, "mobileHidden"].join(" ")}>
-                    <li
-                        className={
-                            this.state.active === "about" ? "activeLock" : null
-                        }
-                    >
+                {/*<nav className={navClassName}>
+                    <li className={aboutActive}>
                         <ScrollLink
-                            className={
-                                this.state.active === "about"
-                                    ? "activeLock"
-                                    : null
-                            }
                             activeClass="active"
                             to="about"
                             spy={true}
                             smooth={true}
-                            offset={1}
                             duration={500}
                             onSetActive={this.handleSetActive}
                             onSetInactive={this.handleSetInactive}
@@ -79,21 +80,10 @@ class IndexPage extends React.Component {
                             About Me
                         </ScrollLink>
                     </li>
-                    <li
-                        className={
-                            this.state.active === "experiences"
-                                ? "activeLock"
-                                : null
-                        }
-                    >
+                    <li className={expActive}>
                         <ScrollLink
-                            className={
-                                this.state.active === "experiences"
-                                    ? "activeLock"
-                                    : null
-                            }
                             activeClass="active"
-                            to="experiences"
+                            to="exp"
                             spy={true}
                             smooth={true}
                             duration={500}
@@ -103,21 +93,10 @@ class IndexPage extends React.Component {
                             Experiences
                         </ScrollLink>
                     </li>
-                    <li
-                        className={
-                            this.state.active === "projects"
-                                ? "activeLock"
-                                : null
-                        }
-                    >
+                    <li className={projActive}>
                         <ScrollLink
-                            className={
-                                this.state.active === "projects"
-                                    ? "activeLock"
-                                    : null
-                            }
                             activeClass="active"
-                            to="projects"
+                            to="proj"
                             spy={true}
                             smooth={true}
                             duration={500}
@@ -127,17 +106,8 @@ class IndexPage extends React.Component {
                             Projects
                         </ScrollLink>
                     </li>
-                    <li
-                        className={
-                            this.state.active === "posts" ? "activeLock" : null
-                        }
-                    >
+                    <li className={postsActive}>
                         <ScrollLink
-                            className={
-                                this.state.active === "posts"
-                                    ? "activeLock"
-                                    : null
-                            }
                             activeClass="active"
                             to="posts"
                             spy={true}
@@ -149,28 +119,77 @@ class IndexPage extends React.Component {
                             Posts
                         </ScrollLink>
                     </li>
-                </nav>
+                </nav>*/}
+                <Element name="header" className="header">
+                    <div className="header__container">
+                        <div className="header__logo">
+                            <Logo />
+                        </div>
+                        <div className="header__title">
+                            <h1 className="header__h1 line1">HANK</h1>
+                            <h1 className="header__h1 line2">HSU</h1>
+                        </div>
+                    </div>
+                    <ScrollLink
+                        activeClass="active"
+                        to="about"
+                        spy={true}
+                        smooth={true}
+                        duration={1000}
+                        className="header__arrow"
+                    >
+                        <span></span>
+                    </ScrollLink>
+                </Element>
                 <Element name="about" className="section">
                     <h1>About Me</h1>
                     <p>
-                        Hello, I'm Hank Hsu from Taichung, Taiwan. I graduated
-                        from National Taiwan University with a double major in
-                        mechanical engineering and electrical engineering. My
-                        research interests lie in <b>bio-inspired robots</b>,{" "}
-                        <b>mmWave IC</b>, and <b>digital IC / VLSI</b>. During
-                        my undergraduate years, I participated in several
-                        research projects, including the gait development of a
-                        Hexapod robot, a Ka-band down-conversion mixer IC, and
-                        an advanced encryption standard IC.
+                        Hi, I'm Hank Hsu, a computer hardware engineering
+                        student from Taichung, Taiwan.{" "}
                     </p>
-                    <ProjectDiv />
+                    <p>
+                        I graduated from National Taiwan University with a
+                        double major in mechanical engineering and electrical
+                        engineering. My research interests lie in{" "}
+                        <b>bio-inspired robots</b>, <b>mmWave IC</b>, and{" "}
+                        <b>digital IC / VLSI</b>. During my undergraduate years,
+                        I participated in several research projects, including
+                        the gait development of a Hexapod robot, a Ka-band
+                        down-conversion mixer IC, and an advanced encryption
+                        standard encryption/decryption IC.
+                    </p>
                     <p>
                         I decided to pursue a master's degree in electrical and
                         computer engineering in the U.S. Currently, I'm waiting
                         for the admission decision.
                     </p>
+                    {/*<div id="liveUpdates">
+                        <h2>Live Updates</h2>
+                        <div id="liveWrapper">
+                            <ul>
+                                <li>Georgia Tech ECE M.S.</li>
+                                <li>University of Michigan ECE M.S.</li>
+                                <li>Carnegie Mellon University ECE M.S.</li>
+                                <li>Purdue University ECE M.S.</li>
+                                <li>
+                                    The University of Texas at Austin ECE M.S.
+                                </li>
+                                <li>
+                                    University of California, Los Angeles ECE
+                                    M.S.
+                                </li>
+                                <li>
+                                    University of Southern California ECE M.S.
+                                </li>
+                                <li>
+                                    University of California San Diego ECE M.S.
+                                </li>
+                                <li>University of Washington ECE M.S.</li>
+                            </ul>
+                        </div>
+                    </div>*/}
                 </Element>
-                <Element name="experiences" className="section">
+                <Element name="exp" className="section">
                     <h1>Experiences</h1>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -195,7 +214,7 @@ class IndexPage extends React.Component {
                         anim id est laborum.
                     </p>
                 </Element>
-                <Element name="projects" className="section">
+                <Element name="proj" className="section">
                     <h1>Projects</h1>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing

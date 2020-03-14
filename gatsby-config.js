@@ -84,8 +84,8 @@ module.exports = {
                 short_name: `hankhsu1996`,
                 start_url: `/`,
                 background_color: `#ffffff`,
-                theme_color: `#663399`,
-                display: `standalone`, // default: `minimal-ui`
+                theme_color: `#333333`,
+                display: `minimal-ui`, // default: `minimal-ui`
                 // edit below
                 icon: `content/assets/favicon.png`
             }
@@ -103,6 +103,10 @@ module.exports = {
                     {
                         family: `Open Sans`,
                         variants: [`400`, `600`, `700`, `800`]
+                    },
+                    {
+                        family: `Open Sans Condensed`,
+                        variants: [`300`]
                     }
                 ]
             }

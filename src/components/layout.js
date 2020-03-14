@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 
 import { rhythm, scale } from "../utils/typography";
-import IndexHeader from "./indexHeader";
 
 // Wrap header, main, and footer
 
@@ -15,7 +14,7 @@ class Layout extends React.Component {
         let header;
 
         if (location.pathname === rootPath) {
-            header = <IndexHeader />;
+            header = null;
         } else if (location.pathname === blogPath) {
             header = (
                 <h1
@@ -77,7 +76,7 @@ class Layout extends React.Component {
 
 const Wrapper = styled.div`
     width: 100%;
-    background-color: "#123456";
+    background-color: "white";
     min-height: 100vh;
 `;
 

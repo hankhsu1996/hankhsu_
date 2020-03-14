@@ -29,7 +29,7 @@ a {
 }
 
 /* Hide from mobile browser */
-@media only screen AND (max-width: 1050px) {
+@media only screen AND (max-width: 500px) {
     .mobileHidden {
         display: none;
     }
@@ -38,11 +38,7 @@ a {
 /* Index page header */
 .header {
     padding: 0 32px;
-    background-image: linear-gradient(
-        to bottom right,
-        hsl(205, 70%, 70%),
-        hsl(193, 77%, 83%)
-    );
+
     position: relative;
     display: -webkit-flex;
     display: -moz-flex;
@@ -60,10 +56,7 @@ a {
 
     /* Real 100% height */
     min-height: 100vh;
-    min-height: calc(var(--vh, 1vh) * 100);
-
-    /* Mountain */
-    overflow: hidden;
+    /*min-height: calc(var(--vh, 1vh) * 100);*/
 }
 
 .header__container {
@@ -74,45 +67,70 @@ a {
     display: flex;
     -ms-align-items: center;
     align-items: center;
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
-    -o-flex-direction: column;
-    flex-direction: column;
+    margin-bottom: 30px;
+}
+#header__logo {
+    padding: 0;
+    margin: 0;
+    margin-right: 18px;
+    width: 120px;
+    height: 120px;
+}
+
+#header__logo #H polyline,
+#header__logo #K polyline {
+    stroke: #50a7c2;
 }
 
 .header__title {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
-    -o-flex-direction: column;
-    flex-direction: column;
-    -ms-align-items: center;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 8px;
 }
 
-.header__h1 {
-    margin: 0 0 10px 0;
-    padding: 0;
-    font-size: 3em;
-    font-weight: 800;
+.header__h1,
+.header__h1 span {
+    font-family: "Open Sans condensed";
+    font-size: 50px;
+    letter-spacing: 15px;
+    font-weight: 300;
+    line-height: 50px;
 }
-.header__p {
-    font-size: 1.5em;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 140px;
+
+/* Header animation */
+.header #H {
+    stroke-dasharray: 520 1000;
+    stroke-dashoffset: 521;
+    animation: dash 6s ease-out forwards;
+}
+
+.header #A {
+    stroke-dasharray: 330 1000;
+    stroke-dashoffset: 331;
+    animation: dash 6s ease-out forwards;
+}
+
+.header #N {
+    stroke-dasharray: 390 1000;
+    stroke-dashoffset: 391;
+    animation: dash 6s ease-out forwards;
+}
+
+.header #K {
+    stroke-dasharray: 460 1000;
+    stroke-dashoffset: 461;
+    animation: dash 6s ease-out forwards;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 .header__arrow {
+    visibility: hidden;
+    opacity: 0;
     -webkit-animation: 1s infinite alternate arrowBounce;
-    animation: 1s infinite alternate arrowBounce;
+    animation: 1s infinite alternate arrowBounce, 0.7s fadein 7s forwards;
     position: absolute;
     bottom: 10%;
 }
@@ -127,36 +145,19 @@ a {
     height: 32px;
     border-right: 2px solid;
     border-bottom: 2px solid;
-    border-color: #fefefe;
+    border-color: #333333;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
-.header #mountain {
-    margin: 0;
-    position: absolute;
-    width: 100%;
-    min-width: 1000px;
-    bottom: -2px;
-    left: 60%;
-    transform: translate(-60%, 0%);
-
-    /* Disable image select*/
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-}
-
-@-webkit-keyframes arrowBounce {
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
+@keyframes fadein {
+    from {
+        visibility: hidden;
+        opacity: 0;
     }
-    100% {
-        -webkit-transform: translateY(-16px);
-        transform: translateY(-16px);
+    to {
+        visibility: visible;
+        opacity: 1;
     }
 }
 
@@ -170,13 +171,24 @@ a {
         transform: translateY(-16px);
     }
 }
-/* Index page section */
+/* Index page main section */
+
 .section {
     width: 100%;
     font-family: "Open Sans";
-    padding: 80px 21% 0 18%;
+    padding: 80px 20% 0 20%;
     line-height: 1.5;
 }
+
+@media only screen and (max-width: 600px) {
+    .section {
+        width: 100%;
+        font-family: "Open Sans";
+        padding: 80px 5% 0 5%;
+        line-height: 1.5;
+    }
+}
+
 /*.section:nth-child(odd) {
     background-color: #eee;
 }*/
@@ -188,10 +200,101 @@ a {
     border-left: 8px solid #50a7c2;
 }
 
+.section h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+#liveWrapper {
+    margin: 0;
+    margin-top: 10px;
+    /*padding-top: 10px;*/
+    overflow: hidden;
+    position: relative;
+    height: 45px;
+}
+
+#liveWrapper li {
+    padding: 10px 0;
+    height: 45px;
+    margin-bottom: 45px;
+    display: block;
+}
+
+#liveWrapper ul {
+    animation: flip 30s ease-in-out infinite;
+}
+
+@keyframes flip {
+    0% {
+        margin-top: -810px;
+    }
+    1% {
+        margin-top: -720px;
+    }
+    11% {
+        margin-top: -720px;
+    }
+    12% {
+        margin-top: -630px;
+    }
+    22% {
+        margin-top: -630px;
+    }
+    23% {
+        margin-top: -540px;
+    }
+    33% {
+        margin-top: -540px;
+    }
+    34% {
+        margin-top: -450px;
+    }
+    44% {
+        margin-top: -450px;
+    }
+    45% {
+        margin-top: -360px;
+    }
+    55% {
+        margin-top: -360px;
+    }
+    56% {
+        margin-top: -270px;
+    }
+    66% {
+        margin-top: -270px;
+    }
+    67% {
+        margin-top: -180px;
+    }
+    77% {
+        margin-top: -180px;
+    }
+    78% {
+        margin-top: -90px;
+    }
+    89% {
+        margin-top: -90px;
+    }
+    90% {
+        margin-top: 0px;
+    }
+    98.99% {
+        margin-top: 0px;
+    }
+    99.99% {
+        margin-top: 90px;
+    }
+    100% {
+        margin-top: -810px;
+    }
+}
+
 .section p {
     font-size: 1.1em;
     line-height: 1.6;
-    margin: 0 0 32px;
+    margin: 0 0 16px;
 }
 
 /* Index page narbar */
@@ -252,14 +355,14 @@ nav li a:hover {
     text-decoration: underline;
     cursor: pointer;
 }
-nav li a.activeLock {
+nav li.myactive a {
     font-size: 18px;
     color: #222;
     font-weight: 800;
     transform: translateX(6px);
 }
 
-nav li.activeLock:before {
+nav li.myactive:before {
     content: "";
     width: 4px;
     height: 20px;
