@@ -54,11 +54,11 @@ class IndexPage extends React.Component {
 
         // Navbar settings
         const showNav = this.state.showNav ? "show" : "hide";
-        const navClassName = [showNav, "mobileHidden"].join(" ");
-        const aboutActive = this.state.active === "about" ? "myactive" : null;
-        const expActive = this.state.active === "exp" ? "myactive" : null;
-        const projActive = this.state.active === "proj" ? "myactive" : null;
-        const postsActive = this.state.active === "posts" ? "myactive" : null;
+        // const navClassName = [showNav, "mobileHidden"].join(" ");
+        // const aboutActive = this.state.active === "about" ? "myactive" : null;
+        // const expActive = this.state.active === "exp" ? "myactive" : null;
+        // const projActive = this.state.active === "proj" ? "myactive" : null;
+        // const postsActive = this.state.active === "posts" ? "myactive" : null;
 
         return (
             <Layout location={this.props.location} title={siteTitle}>
