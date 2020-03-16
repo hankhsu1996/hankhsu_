@@ -1,0 +1,10 @@
+svg#site-logo {
+    height: 100px;
+}
+
+svg#site-logo rect,
+svg#site-logo path,
+svg#site-logo line,
+svg#site-logo polyline {
+    stroke: #9eabab;
+}

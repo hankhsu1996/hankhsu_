@@ -5,7 +5,7 @@ class Logo extends React.Component {
         return (
             <svg
                 version="1.1"
-                id="header__logo"
+                id="site-logo"
                 x="0px"
                 y="0px"
                 width="370px"

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
+import Logo from "./logo";
 import { rhythm, scale } from "../utils/typography";
 
 // Wrap header, main, and footer
@@ -12,9 +13,20 @@ class Layout extends React.Component {
         const rootPath = `${__PATH_PREFIX__}/`;
         const blogPath = `${__PATH_PREFIX__}/blog/`;
         let header;
+        let headerClass;
 
         if (location.pathname === rootPath) {
-            header = null;
+            headerClass = "site-home-header";
+            header = (
+              <div className="outer site-header-background no-image">
+                <div className="inner">
+                  <div className="site-header-content">
+                    <Logo className="site-logo" />
+                    <h2 className="site-description">Hank Hsu's Website</h2>
+                  </div>
+                </div>
+              </div>
+            );
         } else if (location.pathname === blogPath) {
             header = (
                 <h1
@@ -58,27 +70,23 @@ class Layout extends React.Component {
             );
         }
         return (
-            <Wrapper>
-                <header>{header}</header>
-                <main id="main">{children}</main>
-                <Footer>
-                    <h1>hankhsu1996</h1>
-                    <p>© Copyright {new Date().getFullYear()}</p>
-                    <p>
-                        All right reserved. Built with{" "}
-                        <a href="https://www.gatsbyjs.org">Gatsby</a>.
-                    </p>
-                </Footer>
-            </Wrapper>
+          <div className="site-wrapper">
+            <header className={headerClass}>{header}</header>
+            <main className="site-main outer">
+              <div className="inner">{children}</div>
+            </main>
+            <Footer>
+              <h1>hankhsu1996</h1>
+              <p>© Copyright {new Date().getFullYear()}</p>
+              <p>
+                All right reserved. Built with{" "}
+                <a href="https://www.gatsbyjs.org">Gatsby</a>.
+              </p>
+            </Footer>
+          </div>
         );
     }
 }
-
-const Wrapper = styled.div`
-    width: 100%;
-    background-color: "white";
-    min-height: 100vh;
-`;
 
 const Footer = styled.footer`
     text-align: center;
