@@ -553,9 +553,16 @@ body {
   margin-top: 64px;
   padding-bottom: 12px;
   color: #fff;
-  background: #090a0b no-repeat 50%;
+  background: radial-gradient(
+      at 50% 20%,
+      hsl(211, 16%, 30%) 0%,
+      hsl(211, 19%, 20%) 70%,
+      hsl(211, 19%, 20%) 100%
+    )
+    no-repeat;
   background-size: cover;
 }
+/* todo */
 
 .site-header-background:before {
   bottom: 0;
@@ -620,6 +627,7 @@ body {
 
 .site-home-header {
   z-index: 1000;
+  background-color: #29323c;
 }
 
 .site-home-header .site-header-background {
@@ -700,8 +708,9 @@ body {
   right: 0;
   left: 0;
   z-index: 1000;
-  background: #29323c;
+  background: hsl(211, 19%, 20%);
 }
+/* todo */
 
 .site-nav {
   position: relative;
@@ -746,7 +755,7 @@ body {
   flex-shrink: 0;
   display: inline-block;
   margin-right: 32px;
-  padding: 12px 0;
+  padding: 10px 0;
   color: #fff;
   font-size: 1.7rem;
   line-height: 1.8rem;
@@ -768,7 +777,7 @@ body {
 /* self added */
 .site-nav-logo svg {
   display: block;
-  width: 16px;
+  height: 25px;
 }
 
 .site-home-header .site-nav-logo {

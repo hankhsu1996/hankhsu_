@@ -8,7 +8,6 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import styled from 'styled-components';
 
 import { rhythm } from '../utils/typography';
 
@@ -19,7 +18,7 @@ function Bio() {
       render={data => {
         const { author, social } = data.site.siteMetadata;
         return (
-          <Container>
+          <div>
             <Image
               fixed={data.avatar.childImageSharp.fixed}
               alt={author}
@@ -41,7 +40,7 @@ function Bio() {
                 You should follow him on Twitter
               </a>
             </p>
-          </Container>
+          </div>
         );
       }}
     />
@@ -67,9 +66,4 @@ const bioQuery = graphql`
     }
   }
 `;
-
-const Container = styled.div`
-  display: flex;
-`;
-
 export default Bio;

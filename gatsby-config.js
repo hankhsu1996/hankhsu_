@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
   pathPrefix: '/public',
@@ -14,7 +14,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`, // image transform library
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
@@ -32,13 +31,6 @@ module.exports = {
       options: {
         path: path.join(__dirname, `content`, `assets`),
         name: `assets`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: path.join(__dirname, `src`, `images`),
-        name: `images`,
       },
     },
     {
@@ -84,9 +76,8 @@ module.exports = {
         short_name: `hankhsu1996`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#29323c`,
-        display: `minimal-ui`, // default: `minimal-ui`
-        // edit below
+        theme_color: `hsl(211, 19%, 20%)`,
+        display: `minimal-ui`,
         icon: `content/assets/favicon.png`,
       },
     },

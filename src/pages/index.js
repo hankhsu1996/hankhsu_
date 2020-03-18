@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Button from '../components/button';
 
 import '../styles/index.css';
 
@@ -12,16 +11,9 @@ class IndexPage extends React.Component {
     var nav = document.querySelector('.site-nav-main .site-nav');
     var content = document.querySelector('.post-full-content');
     var lastScrollY = window.scrollY;
-    var lastWindowHeight = window.innerHeight;
-    var lastDocumentHeight = document.body.clientHeight;
     var ticking = false;
     function onScroll() {
       lastScrollY = window.scrollY;
-      requestTick();
-    }
-    function onResize() {
-      lastWindowHeight = window.innerHeight;
-      var lastDocumentHeight = document.body.clientHeight;
       requestTick();
     }
     function requestTick() {
@@ -32,8 +24,6 @@ class IndexPage extends React.Component {
     }
     function update() {
       var trigger = content.getBoundingClientRect().top + window.scrollY;
-      var progressMax = lastDocumentHeight - lastWindowHeight;
-      // show/hide nav
       if (lastScrollY >= trigger - 20) {
         nav.classList.add('fixed-nav-active');
       } else {
@@ -42,7 +32,6 @@ class IndexPage extends React.Component {
       ticking = false;
     }
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onResize, false);
     update();
   }
 
@@ -142,9 +131,7 @@ class IndexPage extends React.Component {
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <Link to="/blog/">
-              <Button marginTop="35px">Go to Blog</Button>
-            </Link>
+            <Link to="/blog/">BLOG</Link>
           </div>
         </div>
       </Layout>

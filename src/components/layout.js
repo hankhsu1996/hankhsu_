@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
 
 import Logo from './logo';
 import Nav from './nav';
@@ -16,7 +15,6 @@ class Layout extends React.Component {
     let header;
     let headerClass;
     let wrapperClass = [this.props.template, 'site-wrapper'].join(' ');
-    console.log(wrapperClass);
 
     if (location.pathname === rootPath) {
       headerClass = 'site-home-header';
@@ -84,22 +82,17 @@ class Layout extends React.Component {
             <Nav />
           </div>
         </div>
-        <Footer>
+        <footer>
           <h1>hankhsu1996</h1>
           <p>© Copyright {new Date().getFullYear()}</p>
           <p>
             All right reserved. Built with{' '}
             <a href="https://www.gatsbyjs.org">Gatsby</a>.
           </p>
-        </Footer>
+        </footer>
       </div>
     );
   }
 }
-
-const Footer = styled.footer`
-  text-align: center;
-  margin: 24px;
-`;
 
 export default Layout;

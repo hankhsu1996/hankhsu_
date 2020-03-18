@@ -10,7 +10,7 @@ class Nav extends React.Component {
         <div className="site-nav-left-wrapper">
           <div className="site-nav-left">
             <Link to="/" className="site-nav-logo">
-              <Logo />
+              <Logo test="123" />
             </Link>
             <div className="site-nav-content" role="menu">
               <ul className="nav">

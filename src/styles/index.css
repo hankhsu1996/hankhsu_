@@ -1,35 +1,26 @@
 /* Navbar */
 a {
-    box-shadow: none!important;
+  box-shadow: none !important;
 }
 
-.social-link-li svg{
-    height: 16px;
-    width: 16px;
+.social-link-li svg {
+  height: 16px;
+  width: 16px;
 }
 
-/* Header */
-svg#site-logo {
-  height: 6rem;
-  margin-bottom: 1rem;
+.site-header-content svg {
+  height: 55px;
 }
 
-svg#site-logo rect,
-svg#site-logo path,
-svg#site-logo line,
-svg#site-logo polyline {
-  stroke: #d5d5d5;
-}
-
-.site-header-background {
-  background: radial-gradient(#485563 0%, #29323c 80%, #29323c 100%);
+.site-header-content h2.site-description {
+  padding-top: 20px;
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 2rem;
 }
 
 .site-home-header .site-description {
   font-size: 2.2rem;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-weight: 300;
 }
-
-
-
