@@ -3094,7 +3094,7 @@ body {
 .site-footer {
   position: relative;
   padding-top: 20px;
-  padding-bottom: 35px;
+  padding-bottom: 40px;
   color: #fff;
   background: hsl(211, 19%, 20%);
 }
@@ -3105,6 +3105,7 @@ body {
   justify-content: space-between;
   /* align-items: center; */
   font-size: 1.3rem;
+  line-height: 1.7em;
 }
 
 .site-footer-content,
@@ -3145,8 +3146,15 @@ body {
 
 @media (max-width: 650px) {
   .site-footer-content {
+    align-items: center;
     flex-direction: column;
+    text-align: center;
   }
+
+  .site-footer-content section {
+    margin-bottom: 7px;
+  }
+
   .site-footer-nav a:first-child {
     margin-left: 0;
   }
