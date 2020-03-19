@@ -81,12 +81,6 @@ module.exports = {
         icon: `content/assets/favicon.png`,
       },
     },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
     // {
     //     resolve: `gatsby-plugin-prefetch-google-fonts`,
     //     options: {

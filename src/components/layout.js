@@ -1,15 +1,13 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import Logo from './logo';
 import Nav from './nav';
-import { rhythm, scale } from '../utils/typography';
-
-// Wrap header, main, and footer
+import Footer from './footer';
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props;
+    // const { location, title, children } = this.props;
+    const { location, children } = this.props;
     const rootPath = `${__PATH_PREFIX__}/`;
     const blogPath = `${__PATH_PREFIX__}/blog/`;
     let header;
@@ -24,52 +22,17 @@ class Layout extends React.Component {
             <Nav />
             <div className="site-header-content">
               <Logo className="site-logo" />
-              <h2 className="site-description">Hank Hsu's Personal Website</h2>
+              <h2 className="site-description">
+                Digital Design Engineering Student from Taiwan
+              </h2>
             </div>
           </div>
         </div>
       );
     } else if (location.pathname === blogPath) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={location.pathname === blogPath ? `/blog/` : `/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      );
+      header = <h1>Hello World!</h1>;
     } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/blog/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      );
+      header = <h1>Hello World!</h1>;
     }
     return (
       <div className={wrapperClass}>
@@ -82,14 +45,7 @@ class Layout extends React.Component {
             <Nav />
           </div>
         </div>
-        <footer>
-          <h1>hankhsu1996</h1>
-          <p>© Copyright {new Date().getFullYear()}</p>
-          <p>
-            All right reserved. Built with{' '}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>.
-          </p>
-        </footer>
+        <Footer />
       </div>
     );
   }

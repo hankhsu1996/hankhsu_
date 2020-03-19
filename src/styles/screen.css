@@ -618,11 +618,11 @@ body {
 .site-description {
   z-index: 10;
   margin: 0;
-  padding: 5px 0;
+  padding-top: 20px;
   font-size: 2.1rem;
   line-height: 1.4em;
-  font-weight: 400;
   opacity: 0.8;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .site-home-header {
@@ -682,6 +682,12 @@ body {
 }
 
 @media (max-width: 500px) {
+  .site-header-background {
+    background: hsl(211, 19%, 20%);
+  }
+  .site-header-content {
+    min-height: 180px;
+  }
   .site-home-header .site-title {
     font-size: 4.2rem;
   }
@@ -1440,7 +1446,7 @@ body {
 .post-full-content p,
 .post-full-content pre,
 .post-full-content ul {
-  margin: 0 0 1.5em;
+  margin: 0.7em 0 1.5em; /* 0 0 1.5em */
   min-width: 100%;
 }
 
@@ -3088,22 +3094,23 @@ body {
 .site-footer {
   position: relative;
   padding-top: 20px;
-  padding-bottom: 60px;
+  padding-bottom: 35px;
   color: #fff;
-  background: #090a0b;
+  background: hsl(211, 19%, 20%);
 }
 
 .site-footer-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   font-size: 1.3rem;
 }
 
 .site-footer-content,
 .site-footer-content a {
   color: hsla(0, 0%, 100%, 0.7);
+  transition: 0.2s;
 }
 
 .site-footer-content a:hover {
