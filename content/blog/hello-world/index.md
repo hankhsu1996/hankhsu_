@@ -1,6 +1,9 @@
 ---
 title: Hello World
-date: "2015-05-01T22:12:03.284Z"
+date: '2015-05-01T22:12:03.284Z'
+featuredImage: ./hello_world.png
+excerpt: Oh, my. Hello world! This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things.
+tags: 'Hello world'
 ---
 
 This is my first post on my new fake blog! How exciting!
@@ -22,6 +25,6 @@ Oh, and here's a great quote from this Wikipedia on
 
 ```js
 function helloWorld() {
-  console.log("Hello World!")
+  console.log('Hello World!');
 }
 ```

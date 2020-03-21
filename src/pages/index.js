@@ -25,6 +25,7 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount() {
+    // Scroll event
     this.setState({
       lastScrollY: window.scrollY,
     });
@@ -58,15 +59,10 @@ class IndexPage extends React.Component {
   };
 
   render() {
-    const siteTitle = 'Shou-Li Hsu';
     const template = 'home-template';
 
     return (
-      <Layout
-        location={this.props.location}
-        title={siteTitle}
-        template={template}
-      >
+      <Layout template={template}>
         <SEO title="Home" keywords={[`Shou-Li`, `Hsu`, `Hank`]} />
 
         <div className="post-full-content" style={{ marginTop: 50 }}>
@@ -75,8 +71,8 @@ class IndexPage extends React.Component {
             <p>
               I'm a student from Taichung, Taiwan. I graduated from National
               Taiwan University with a double major in mechanical engineering
-              and electrical engineering. Currently, I'm preparing for attending
-              graduate school in the USA.
+              and electrical engineering. I'm going to attend graduate school in
+              the USA.
             </p>
             <p>
               My research interests lie in bio-inspired robots, mmWave
@@ -103,27 +99,27 @@ class IndexPage extends React.Component {
             </p>
             <h3>Gait Development of a Hexapod Robot</h3>
             <p>
-              The Hexapod robot has excellent ability to overcome tough
-              terrainm; my team aimed to make the robot jump higher. We adapted
+              The Hexapod robot has an excellent ability to overcome tough
+              terrains; my team aimed to make the robot jump higher. We adapted
               a <i>flip-and-roll</i> gait on the robot so it can jump with a
               higher center of gravity at the beginning.
             </p>
             <h3>Ka-band GaAs IQ Mixer</h3>
             <p>
-              This mixer is used in the receiver system in the{' '}
-              <i>Next Generation Very Large Array</i>. It down-converts Ka-band
-              RF signal to 4 - 20 GHz IF signal, and achieves high image
-              rejection ratio within the bandwidth. It's been taped-out.
+              This mixer will be used in the receiver system in the{' '}
+              <i>Next Generation Very Large Array</i>. It down-converts the
+              Ka-band RF signal to 4 - 20 GHz IF signal and achieves a high
+              image rejection ratio within the bandwidth. It's been taped-out.
             </p>
             <h3>Advanced Encryption Standard Hardware Accelerator</h3>
             <p>
-              It's an ASIC for Advanced Encryption Standard algorithm. Taped-out
-              with UMC 0.18 process, this ASIC achieves 300+ times faster
-              encryption / decryption than software.
+              It's an ASIC for the Advanced Encryption Standard algorithm.
+              Taped-out with UMC 0.18 process, this ASIC achieves 300+ times
+              faster encryption/decryption than software.
             </p>
             <h3>More Projects</h3>
             <p>
-              Only a few larger projects is listed. I've also done some smaller
+              Only a few larger projects are listed. I've also done some smaller
               yet fun projects; some are class projects and others just for
               interest. For more projects, please{' '}
               <Link to="/projects">check this link</Link>.
@@ -135,19 +131,19 @@ class IndexPage extends React.Component {
             <h3>B.S. in Engineering</h3>
             <p>
               <i>2014 - 2019</i> | Graduated from National Taiwan University.
-              Received the double degree of B.S. in mechanical engineering and
+              Received a double degree of B.S. in mechanical engineering and
               electrical engineering.
             </p>
-            <h3>Internship in FLUC Inc.</h3>
+            <h3>Internship at FLUC Inc.</h3>
 
             <p>
-              <i>2017</i> | Served as a maker intern in FLUX Inc., a company
-              designing numeric control products including 3D printers and LASER
-              engraving machines.
+              <i>2017</i> | Served as a maker intern at FLUX Inc., which is a
+              company designing numeric control products, including 3D printers
+              and LASER engraving machines.
             </p>
-            <h3>Internship in HIWIN Corp.</h3>
+            <h3>Internship at HIWIN Corp.</h3>
             <p>
-              <i>2016</i> | Served as an intern in HIWIN Corp., a company
+              <i>2016</i> | Served as an intern at HIWIN Corp., a company
               manufacturing transmission control components and industrial
               robots.
             </p>
@@ -159,7 +155,8 @@ class IndexPage extends React.Component {
               I have not finished this section yet{' '}
               <span role="img" aria-label="smile">
                 😉
-              </span>
+              </span>{' '}
+              Check <Link to="/blog">my blog</Link>!
             </p>
           </div>
         </div>

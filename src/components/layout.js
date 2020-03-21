@@ -6,15 +6,13 @@ import Footer from './footer';
 
 class Layout extends React.Component {
   render() {
-    // const { location, title, children } = this.props;
-    const { location, children } = this.props;
-    const rootPath = `${__PATH_PREFIX__}/`;
-    const blogPath = `${__PATH_PREFIX__}/blog/`;
+    const { children, template } = this.props;
     let header;
     let headerClass;
-    let wrapperClass = [this.props.template, 'site-wrapper'].join(' ');
+    let wrapperClass;
 
-    if (location.pathname === rootPath) {
+    if (template === 'home-template' || template === 'blog-template') {
+      wrapperClass = ['home-template', 'site-wrapper'].join(' ');
       headerClass = 'site-home-header';
       header = (
         <div className="outer site-header-background no-image">
@@ -29,8 +27,6 @@ class Layout extends React.Component {
           </div>
         </div>
       );
-    } else if (location.pathname === blogPath) {
-      header = <h1>Hello World!</h1>;
     } else {
       header = <h1>Hello World!</h1>;
     }
@@ -38,7 +34,7 @@ class Layout extends React.Component {
       <div className={wrapperClass}>
         <header className={headerClass}>{header}</header>
         <main className="site-main outer">
-          <div className="inner">{children}</div>
+          <div className="inner posts">{children}</div>
         </main>
         <div className="outer site-nav-main">
           <div className="inner">

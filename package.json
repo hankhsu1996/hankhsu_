@@ -50,7 +50,7 @@
   },
   "scripts": {
     "build": "gatsby clean; gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 192.168.1.107",
     "deploy": "npm run build",
     "format": "prettier --write src/**/*.{js,jsx,json}",
     "start": "npm run develop",

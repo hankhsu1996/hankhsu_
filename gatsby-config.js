@@ -4,9 +4,9 @@ module.exports = {
   pathPrefix: '/public',
   siteMetadata: {
     // edit below
-    title: `Hank Hsu's Website`,
-    author: `Hank Hsu`,
-    description: `Hank Hsu's Website`,
+    title: `Shou-Li Hsu`,
+    author: `Shou-Li Hsu`,
+    description: `Shou-Li Hsu's Website`,
     siteUrl: `https://hankhsu1996.netlify.io/`,
     social: {
       twitter: `hankhsu1996`,
@@ -81,20 +81,5 @@ module.exports = {
         icon: `content/assets/favicon.png`,
       },
     },
-    // {
-    //     resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //     options: {
-    //         fonts: [
-    //             {
-    //                 family: `Open Sans`,
-    //                 variants: [`300`, `400`, `600`, `700`, `800`]
-    //             },
-    //             {
-    //                 family: `Open Sans Condensed`,
-    //                 variants: [`300`]
-    //             }
-    //         ]
-    //     }
-    // }
   ],
 };
