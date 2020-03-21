@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
+import avatar from '../../content/assets/avatar.png';
 import Logo from './logo';
 import Nav from './nav';
 import Footer from './footer';
@@ -11,8 +13,8 @@ class Layout extends React.Component {
     let headerClass;
     let wrapperClass;
 
-    if (template === 'home-template' || template === 'blog-template') {
-      wrapperClass = ['home-template', 'site-wrapper'].join(' ');
+    if (template === 'home-template') {
+      wrapperClass = 'home-template site-wrapper';
       headerClass = 'site-home-header';
       header = (
         <div className="outer site-header-background no-image">
@@ -26,6 +28,70 @@ class Layout extends React.Component {
             </div>
           </div>
         </div>
+      );
+    } else if (template === 'blog-template') {
+      wrapperClass = 'author-template site-wrapper';
+      headerClass = 'site-archive-header';
+
+      header = (
+        <React.Fragment>
+          <div className="outer site-nav-main">
+            <div className="inner">
+              <Nav />
+            </div>
+          </div>
+          <div className="outer site-header-background no-image">
+            <div className="inner">
+              <div className="site-header-content author-header">
+                <img
+                  src={avatar}
+                  alt="avatar"
+                  className="author-profile-image"
+                />
+                <div className="author-header-content">
+                  <h1 className="site-title">Shou-Li Hsu</h1>
+                  <h2 className="author-bio">Think more design less.</h2>
+                  <div className="author-meta">
+                    <div className="author-stats">7 posts</div>
+                    <span className="author-social-link">
+                      <Link to="/">Website</Link>
+                    </span>
+                    <span className="author-social-link">
+                      <a
+                        href="https://www.facebook.com/hankhsu1996"
+                        title="Facebook"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Facebook
+                      </a>
+                    </span>
+                    <span className="author-social-link">
+                      <a
+                        href="https://github.com/hankhsu1996/"
+                        title="GitHub"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        GitHub
+                      </a>
+                    </span>
+                    <span className="author-social-link">
+                      <a
+                        href="https://www.linkedin.com/in/hankhsu1996/"
+                        title="LinkedIn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        LinkedIn
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </React.Fragment>
       );
     } else {
       header = <h1>Hello World!</h1>;

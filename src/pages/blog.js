@@ -1,6 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import { Link, graphql } from 'gatsby';
+import avatar from '../../content/assets/avatar.png';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -60,7 +61,7 @@ class Blog extends React.Component {
 
     return (
       <Layout template={template}>
-        <SEO title="All posts" />
+        <SEO title="Blog" />
         <div className="post-feed">
           {posts.map(({ node }, index) => {
             const timeToRead = node.timeToRead;
@@ -70,8 +71,7 @@ class Blog extends React.Component {
             const slug = node.fields.slug;
             const link = `blog${slug}`;
             const tags = node.frontmatter.tags;
-
-            let featuredImgFluid =
+            const featuredImgFluid =
               node.frontmatter.featuredImage.childImageSharp.fluid;
 
             let articleClass = ['post', 'post-card'];
@@ -104,13 +104,13 @@ class Blog extends React.Component {
                     <ul className="author-list">
                       <li className="author-list-item">
                         <div className="author-name-tooltip">Shou-Li Hsu</div>
-                        <Link to="/author/shoulihsu/" className="static-avatar">
-                          <Img
-                            className="author-profile-image"
-                            fixed={data.file.childImageSharp.fixed}
+                        <div className="static-avatar">
+                          <img
+                            src={avatar}
                             alt="avatar"
+                            className="author-profile-image"
                           />
-                        </Link>
+                        </div>
                       </li>
                     </ul>
 
@@ -165,13 +165,6 @@ export const pageQuery = graphql`
               }
             }
           }
-        }
-      }
-    }
-    file(relativePath: { eq: "avatar.png" }) {
-      childImageSharp {
-        fixed(width: 30, height: 30) {
-          ...GatsbyImageSharpFixed
         }
       }
     }

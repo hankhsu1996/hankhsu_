@@ -2,7 +2,7 @@
 title: Hello World
 date: '2015-05-01T22:12:03.284Z'
 featuredImage: ./hello_world.png
-excerpt: Oh, my. Hello world! This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things.
+description: Oh, my. Hello world! This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things. <script>alert('hello world!');</script>
 tags: 'Hello world'
 ---
 

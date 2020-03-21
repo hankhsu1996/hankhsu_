@@ -7,7 +7,7 @@ class Footer extends React.Component {
       <footer className="site-footer outer">
         <div className="site-footer-content inner">
           <section className="copyright">
-            <Link to="/">Hank Hsu</Link> &copy; {new Date().getFullYear()}
+            <Link to="/">Shou-Li Hsu</Link> &copy; {new Date().getFullYear()}
             <br />
             All right reserved. Built with{' '}
             <a

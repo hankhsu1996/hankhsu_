@@ -7,22 +7,13 @@
   height: 55px;
 }
 
-.site-home-header .inner {
-  opacity: 0;
-  -webkit-animation: fadein 2s forwards 0.3s;
-  -moz-animation: fadein 2s forwards 0.3s;
-  -ms-animation: fadein 2s forwards 0.3s;
-  -o-animation: fadein 2s forwards 0.3s;
-  animation: fadein 0.5s forwards 0.3s;
-}
-
 .site-main .inner {
   opacity: 0;
-  -webkit-animation: fadein 2s forwards 0.5s;
-  -moz-animation: fadein 2s forwards 0.5s;
-  -ms-animation: fadein 2s forwards 0.5s;
-  -o-animation: fadein 2s forwards 0.5s;
-  animation: fadein 0.5s forwards 0.5s;
+  -webkit-animation: fadein 0.5s forwards 0.1s;
+  -moz-animation: fadein 0.5s forwards 0.1s;
+  -ms-animation: fadein 0.5s forwards 0.1s;
+  -o-animation: fadein 0.5s forwards 0.1s;
+  animation: fadein 0.5s forwards 0.1s;
 }
 
 @keyframes fadein {
