@@ -23,7 +23,7 @@ class Layout extends React.Component {
             <div className="site-header-content">
               <Logo className="site-logo" />
               <h2 className="site-description">
-                Digital Design Engineering Student from Taiwan
+                <i>Think more design less.</i>
               </h2>
             </div>
           </div>

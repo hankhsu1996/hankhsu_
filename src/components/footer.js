@@ -31,6 +31,14 @@ class Footer extends React.Component {
               Facebook
             </a>
             <a
+              href="https://github.com/hankhsu1996/"
+              title="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            <a
               href="https://www.linkedin.com/in/hankhsu1996/"
               title="LinkedIn"
               target="_blank"

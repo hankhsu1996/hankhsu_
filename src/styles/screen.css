@@ -1446,7 +1446,7 @@ body {
 .post-full-content p,
 .post-full-content pre,
 .post-full-content ul {
-  margin: 0.7em 0 1.5em; /* 0 0 1.5em */
+  margin: 0 0 1.5em; /* 0 0 1.5em */
   min-width: 100%;
 }
 

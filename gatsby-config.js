@@ -72,8 +72,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `hankhsu1996 - Hank Hsu's Website`,
-        short_name: `hankhsu1996`,
+        name: `Shou-Li Hsu`,
+        short_name: `Shou-Li Hsu`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `hsl(211, 19%, 20%)`,
