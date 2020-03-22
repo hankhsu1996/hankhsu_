@@ -1384,6 +1384,11 @@ body {
   border-radius: 3px;
 }
 
+/* Gatsby Img will generate div wrapper */
+.post-full-image div {
+  width: 100%;
+}
+
 .post-full-image img {
   max-width: 1040px;
   width: 100%;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-
 import avatar from '../../content/assets/avatar.png';
+
 import Logo from './logo';
 import Nav from './nav';
 import Footer from './footer';
@@ -11,11 +11,13 @@ class Layout extends React.Component {
     const { children, template } = this.props;
     let header;
     let headerClass;
+    let mainClass;
     let wrapperClass;
 
     if (template === 'home-template') {
       wrapperClass = 'home-template site-wrapper';
       headerClass = 'site-home-header';
+      mainClass = 'inner';
       header = (
         <div className="outer site-header-background no-image">
           <div className="inner">
@@ -29,9 +31,13 @@ class Layout extends React.Component {
           </div>
         </div>
       );
-    } else if (template === 'blog-template') {
+    } else if (
+      template === 'blog-template' ||
+      template === 'projects-template'
+    ) {
       wrapperClass = 'author-template site-wrapper';
       headerClass = 'site-archive-header';
+      mainClass = 'inner posts';
 
       header = (
         <React.Fragment>
@@ -94,13 +100,22 @@ class Layout extends React.Component {
         </React.Fragment>
       );
     } else {
-      header = <h1>Hello World!</h1>;
+      wrapperClass = 'post-template site-wrapper';
+      headerClass = 'site-header';
+      mainClass = 'inner';
+      header = (
+        <div className="outer site-nav-main">
+          <div className="inner">
+            <Nav />
+          </div>
+        </div>
+      );
     }
     return (
       <div className={wrapperClass}>
         <header className={headerClass}>{header}</header>
         <main className="site-main outer">
-          <div className="inner posts">{children}</div>
+          <div className={mainClass}>{children}</div>
         </main>
         <div className="outer site-nav-main">
           <div className="inner">

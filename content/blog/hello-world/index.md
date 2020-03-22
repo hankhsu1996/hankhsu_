@@ -1,11 +1,18 @@
 ---
 title: Hello World
-date: '2015-05-01T22:12:03.284Z'
+date: '2020-03-22T15:30:00.000Z'
 featuredImage: ./hello_world.png
-description: Oh, my. Hello world! This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things. <script>alert('hello world!');</script>
+description: Oh, my. Hello world! This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things.
 tags: 'Hello world'
 ---
 
+## Just start writing
+
+Ghost has a powerful visual editor with and cards that support a wide range of dynamic content types.
+
+Select your text to add formatting such as headers or to create links. Or use Markdown shortcuts to do the work for you - if that's your thing.
+
+![salted duck eggs](./salty_egg.jpg)
 This is my first post on my new fake blog! How exciting!
 
 I'm sure I'll write a lot more interesting things in the future.
